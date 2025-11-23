@@ -1,4 +1,5 @@
 import { Project, Skill, Experience, ContactInfo } from '@/types';
+import { getTotalExperience } from '@/lib/calculateExperience';
 
 export const projects: Project[] = [
   {
@@ -49,111 +50,115 @@ export const projects: Project[] = [
 
 export const skills: Skill[] = [
   // Core MERN Stack
-  { 
-    name: 'MongoDB', 
-    level: 90, 
+  {
+    name: 'MongoDB',
+    level: 90,
     category: 'database',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg'
   },
-  { 
-    name: 'Express.js', 
-    level: 95, 
+  {
+    name: 'Express.js',
+    level: 95,
     category: 'backend',
-    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg'
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg',
+    invert: true
   },
-  { 
-    name: 'React.js', 
-    level: 95, 
+  {
+    name: 'React.js',
+    level: 95,
     category: 'frontend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'
   },
-  { 
-    name: 'Node.js', 
-    level: 95, 
+  {
+    name: 'Node.js',
+    level: 95,
     category: 'backend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg'
   },
-  
+
   // Frontend Technologies
-  { 
-    name: 'TypeScript', 
-    level: 90, 
+  {
+    name: 'TypeScript',
+    level: 90,
     category: 'frontend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg'
   },
-  { 
-    name: 'Next.js', 
-    level: 90, 
+  {
+    name: 'Next.js',
+    level: 90,
     category: 'frontend',
-    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
+    invert: true
   },
-  { 
-    name: 'Tailwind CSS', 
-    level: 95, 
+  {
+    name: 'Tailwind CSS',
+    level: 95,
     category: 'frontend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg'
   },
-  { 
-    name: 'JavaScript', 
-    level: 95, 
+  {
+    name: 'JavaScript',
+    level: 95,
     category: 'frontend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'
   },
-  
+
   // Backend & Database
-  { 
-    name: 'REST APIs', 
-    level: 95, 
+  {
+    name: 'REST APIs',
+    level: 95,
     category: 'backend',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg'
   },
-  { 
-    name: 'PostgreSQL', 
-    level: 85, 
+  {
+    name: 'PostgreSQL',
+    level: 85,
     category: 'database',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg'
   },
-  { 
-    name: 'MySQL', 
-    level: 80, 
+  {
+    name: 'MySQL',
+    level: 80,
     category: 'database',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg'
   },
-  { 
-    name: 'Redis', 
-    level: 80, 
+  {
+    name: 'Redis',
+    level: 80,
     category: 'database',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg'
   },
-  { 
-    name: 'Firebase', 
-    level: 85, 
+  {
+    name: 'Firebase',
+    level: 85,
     category: 'database',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg'
   },
-  
+
   // Tools & Services
-  { 
-    name: 'Socket.io', 
-    level: 85, 
+  {
+    name: 'Socket.io',
+    level: 85,
     category: 'tools',
-    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg'
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg',
+    invert: true
   },
-  { 
-    name: 'Docker', 
-    level: 85, 
+  {
+    name: 'Docker',
+    level: 85,
     category: 'tools',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg'
   },
-  { 
-    name: 'CI/CD', 
-    level: 75, 
+  {
+    name: 'CI/CD',
+    level: 75,
     category: 'tools',
-    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg'
+    image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',
+    invert: true
   },
-  { 
-    name: 'Git', 
-    level: 90, 
+  {
+    name: 'Git',
+    level: 90,
     category: 'tools',
     image: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg'
   }
@@ -208,7 +213,7 @@ export const personalInfo = {
   name: 'Kalyan Mahato',
   title: 'Full Stack Developer',
   subtitle: 'MERN Stack | Backend Specialist',
-  bio: "I'm a passionate Full Stack Developer with over 1 year of experience building scalable and user-friendly applications. Skilled in the MERN stack, I love creating impactful projects that solve real-world problems.",
+  bio: `I'm a passionate Full Stack Developer with ${getTotalExperience()} years of experience building scalable and user-friendly applications. Skilled in the MERN stack, I love creating impactful projects that solve real-world problems.`,
   avatar: '/kalyan_logo.JPG',
   location: 'Kolkata, India',
   available: true

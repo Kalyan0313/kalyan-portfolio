@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import LoadingAnimation from './LoadingAnimation';
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -41,20 +41,15 @@ export default function PortfolioLoader({ children }: PortfolioLoaderProps) {
           <LoadingAnimation onComplete={() => setIsLoading(false)} />
         )}
       </AnimatePresence>
-      
+
       {!isLoading && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isVisible ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-          className={isVisible ? 'block' : 'hidden'}
-        >
+        <div className="block">
           <Navigation />
           <main className="pt-16 relative z-10">
             {children}
           </main>
           <Footer />
-        </motion.div>
+        </div>
       )}
     </>
   );

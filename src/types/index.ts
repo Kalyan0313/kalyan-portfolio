@@ -16,6 +16,7 @@ export interface Skill {
   category: 'frontend' | 'backend' | 'database' | 'tools' | 'other';
   icon?: string;
   image?: string;
+  invert?: boolean;
 }
 
 export interface Experience {

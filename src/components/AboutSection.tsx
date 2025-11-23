@@ -13,7 +13,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function AboutSection() {
-  
+
   // GSAP refs
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
@@ -53,28 +53,28 @@ export default function AboutSection() {
       });
 
       // Title animation with text reveal
-      tl.fromTo(titleRef.current, 
+      tl.fromTo(titleRef.current,
         { y: 100, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.2, ease: "power3.out" }
       );
 
       // Image entrance with 3D rotation
       tl.fromTo(imageRef.current,
-        { 
-          x: -100, 
-          y: 50, 
-          opacity: 0, 
+        {
+          x: -100,
+          y: 50,
+          opacity: 0,
           rotationY: -15,
-          scale: 0.8 
+          scale: 0.8
         },
-        { 
-          x: 0, 
-          y: 0, 
-          opacity: 1, 
+        {
+          x: 0,
+          y: 0,
+          opacity: 1,
           rotationY: 0,
           scale: 1,
-          duration: 1.5, 
-          ease: "power3.out" 
+          duration: 1.5,
+          ease: "power3.out"
         },
         "-=0.8"
       );
@@ -82,18 +82,18 @@ export default function AboutSection() {
       // Stats counter animation
       if (statsRef.current?.children) {
         tl.fromTo(Array.from(statsRef.current.children),
-          { 
-            y: 50, 
-            opacity: 0, 
-            scale: 0.8 
+          {
+            y: 50,
+            opacity: 0,
+            scale: 0.8
           },
-          { 
-            y: 0, 
-            opacity: 1, 
+          {
+            y: 0,
+            opacity: 1,
             scale: 1,
-            duration: 0.8, 
+            duration: 0.8,
             stagger: 0.2,
-            ease: "back.out(1.7)" 
+            ease: "back.out(1.7)"
           },
           "-=0.5"
         );
@@ -102,18 +102,18 @@ export default function AboutSection() {
       // Skills cards animation
       if (skillsRef.current?.children) {
         tl.fromTo(Array.from(skillsRef.current.children),
-          { 
-            y: 60, 
-            opacity: 0, 
-            rotationX: 45 
+          {
+            y: 60,
+            opacity: 0,
+            rotationX: 45
           },
-          { 
-            y: 0, 
-            opacity: 1, 
+          {
+            y: 0,
+            opacity: 1,
             rotationX: 0,
-            duration: 1, 
+            duration: 1,
             stagger: 0.15,
-            ease: "power3.out" 
+            ease: "power3.out"
           },
           "-=0.3"
         );
@@ -205,7 +205,7 @@ export default function AboutSection() {
     <section ref={sectionRef} id="about" className="min-h-screen flex items-center py-20 px-4 relative overflow-hidden">
       {/* Transparent Background */}
       <div className="absolute inset-0 bg-transparent" />
-      
+
       <div className="max-w-6xl mx-auto relative z-10 w-full">
         <div ref={titleRef} className="text-center mb-16">
           <div className="inline-block">
@@ -217,7 +217,7 @@ export default function AboutSection() {
             Crafting Digital <span className="gradient-text">Experiences</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            A passionate developer who transforms ideas into reality through clean code, 
+            A passionate developer who transforms ideas into reality through clean code,
             innovative solutions, and user-centered design.
           </p>
         </div>
@@ -228,7 +228,7 @@ export default function AboutSection() {
             <div ref={imageRef} className="relative group">
               {/* Subtle Glow Effect */}
               <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-2xl scale-105" />
-              
+
               {/* Clean Image Container */}
               <div className="relative z-10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-2 rounded-3xl shadow-xl border border-white/20">
                 <div className="relative overflow-hidden rounded-2xl">
@@ -239,12 +239,12 @@ export default function AboutSection() {
                     height={400}
                     className="w-full h-auto object-cover"
                   />
-                  
+
                   {/* Simple Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </div>
-              
+
             </div>
           </div>
 
@@ -255,13 +255,13 @@ export default function AboutSection() {
               <h3 className="text-3xl font-bold mb-4">
                 Hi, I&apos;m <span className="gradient-text">Kalyan</span> 👋
               </h3>
-              
+
               <div className="space-y-4">
                 <p className="text-lg text-gray-300 leading-relaxed">
                   {personalInfo.bio}
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I specialize in building scalable web applications with a focus on performance, 
+                  I specialize in building scalable web applications with a focus on performance,
                   user experience, and modern development practices.
                 </p>
               </div>
@@ -302,16 +302,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Simple CTA */}
-            <div className="pt-6">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300"
-              >
-                Let&apos;s Connect
-                <span className="text-sm">→</span>
-              </a>
-            </div>
           </div>
         </div>
       </div>

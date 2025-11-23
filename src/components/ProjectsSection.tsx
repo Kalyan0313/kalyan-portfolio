@@ -47,7 +47,7 @@ export default function ProjectsSection() {
                   alt={project.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  
+
                 />
                 {/* Fallback placeholder */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple-600/20 flex items-center justify-center" style={{ display: 'none' }}>
@@ -114,7 +114,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* View All Projects Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -128,7 +128,7 @@ export default function ProjectsSection() {
             View All Projects
             <ExternalLink className="w-4 h-4 ml-2 inline" />
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
