@@ -34,7 +34,22 @@ export default function HeroSection() {
           className="mb-8"
         >
           <p className="text-lg text-muted-foreground">
-            Namaste 🙏, I&apos;m <span className="font-semibold text-foreground">Kalyan</span>. A passionate full stack developer
+            Namaste{' '}
+            <motion.span
+              className="inline-block"
+              animate={{
+                rotate: [0, 14, -8, 14, -4, 10, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatDelay: 3,
+                ease: "easeInOut"
+              }}
+            >
+              🙏
+            </motion.span>
+            , I&apos;m <span className="font-semibold text-foreground">Kalyan</span>. A passionate full stack developer
           </p>
         </motion.div>
 

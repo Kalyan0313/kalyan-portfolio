@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import LoadingAnimation from './LoadingAnimation';
-import Navigation from './Navigation';
-import Footer from './Footer';
-import SimpleSparkles from './SimpleSparkles';
+import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import LoadingAnimation from "./LoadingAnimation";
+import Navigation from "./Navigation";
+import SimpleSparkles from "./SimpleSparkles";
 
 interface PortfolioLoaderProps {
   children: React.ReactNode;
@@ -45,10 +44,7 @@ export default function PortfolioLoader({ children }: PortfolioLoaderProps) {
       {!isLoading && (
         <div className="block">
           <Navigation />
-          <main className="pt-16 relative z-10">
-            {children}
-          </main>
-          <Footer />
+          <main className="pt-16 relative z-10">{children}</main>
         </div>
       )}
     </>

@@ -42,13 +42,13 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // Send email using EmailJS
       await emailjs.send(
@@ -63,12 +63,12 @@ export default function ContactSection() {
         },
         EMAILJS_CONFIG.PUBLIC_KEY
       );
-      
+
       // Success
       setIsSubmitting(false);
       setFormData({ name: '', email: '', subject: '', message: '' });
       alert('Message sent successfully! I\'ll get back to you soon.');
-      
+
     } catch {
       setIsSubmitting(false);
       // Better error handling - could implement toast notifications
@@ -131,7 +131,7 @@ export default function ContactSection() {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Ready to work together? Let&apos;s discuss your next project
+            Ready to work together? Let&apos;s discuss your next project
           </p>
         </motion.div>
 
@@ -146,7 +146,7 @@ export default function ContactSection() {
             <div>
               <h3 className="text-2xl font-bold mb-4">Let&apos;s Connect</h3>
               <p className="text-muted-foreground mb-6">
-                    I&apos;m always interested in new opportunities and exciting projects.
+                I&apos;m always interested in new opportunities and exciting projects.
                 Whether you have a question or just want to say hi, feel free to reach out!
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                     whileHover={{ scale: 1.2, y: -2 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-200 text-muted-foreground hover:text-primary"
+                    className="min-w-[44px] min-h-[44px] bg-secondary rounded-lg flex items-center justify-center border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-200 text-muted-foreground hover:text-primary"
                     aria-label={link.title}
                   >
                     <link.icon className="w-5 h-5" />
@@ -223,7 +223,7 @@ export default function ContactSection() {
             className="bg-secondary rounded-xl p-6 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300"
           >
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -237,7 +237,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200 text-base"
                     placeholder="Your name"
                   />
                 </div>
@@ -252,7 +252,7 @@ export default function ContactSection() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-3 py-2 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200 text-base"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -269,7 +269,7 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-3 py-2 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200 text-base"
                   placeholder="What's this about?"
                 />
               </div>
@@ -285,7 +285,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-3 py-2 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:border-primary focus:outline-none transition-colors duration-200 resize-none text-base"
                   placeholder="Tell me about your project..."
                 />
               </div>

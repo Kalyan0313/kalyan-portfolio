@@ -49,3 +49,14 @@ export interface SocialLink {
   icon: React.ComponentType<{ className?: string }>;
   href: string;
 }
+
+export interface Education {
+  id: string;
+  institution: string;
+  degree: string;
+  field: string;
+  location: string;
+  cgpa?: string;
+  startYear: string;
+  endYear: string;
+}

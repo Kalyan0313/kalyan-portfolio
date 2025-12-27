@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import { Code, Database, Server, Zap, Star, Award, Target, Users } from 'lucide-react';
-import { personalInfo } from '@/constants/portfolio-data';
+import { Code, Database, Server, Zap, Star, Award, Target, Users, GraduationCap } from 'lucide-react';
+import { personalInfo, education } from '@/constants/portfolio-data';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -31,7 +31,7 @@ export default function AboutSection() {
   ];
 
   const stats = [
-    { number: '1.3+', label: 'Years Experience', icon: Award },
+    { number: '1.6+', label: 'Years Experience', icon: Award },
     { number: '8+', label: 'Projects Completed', icon: Target },
     { number: '5+', label: 'Technologies Mastered', icon: Star },
     { number: '100%', label: 'Client Satisfaction', icon: Users }
@@ -299,6 +299,27 @@ export default function AboutSection() {
                     <p className="text-xs text-gray-300">{skill.description}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Education */}
+            <div>
+              <h4 className="text-xl font-semibold mb-4 text-white">Education</h4>
+              <div className="p-4 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                    <GraduationCap className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h5 className="font-semibold text-white text-base mb-1">{education.degree} in {education.field}</h5>
+                    <p className="text-sm text-primary font-medium mb-1">{education.institution}</p>
+                    <p className="text-xs text-gray-300 mb-1">{education.location}</p>
+                    <div className="flex items-center gap-4 text-xs text-gray-400">
+                      <span>{education.startYear} – {education.endYear}</span>
+                      <span className="text-primary font-semibold">CGPA: {education.cgpa}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

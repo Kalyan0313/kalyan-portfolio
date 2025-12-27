@@ -213,8 +213,19 @@ export const personalInfo = {
   name: 'Kalyan Mahato',
   title: 'Full Stack Developer',
   subtitle: 'MERN Stack | Backend Specialist',
-  bio: `I'm a passionate Full Stack Developer with ${getTotalExperience()} years of experience building scalable and user-friendly applications. Skilled in the MERN stack, I love creating impactful projects that solve real-world problems.`,
+  bio: `I'm a passionate Full Stack Developer with 1.6+ years of experience building scalable and user-friendly applications. Skilled in the MERN stack, I love creating impactful projects that solve real-world problems.`,
   avatar: '/kalyan_logo.JPG',
   location: 'Kolkata, India',
   available: true
+};
+
+export const education = {
+  id: 'iem-btech',
+  institution: 'Institute of Engineering and Management',
+  degree: 'B.Tech',
+  field: 'Computer Science and Engineering',
+  location: 'Kolkata, India',
+  cgpa: '8.38',
+  startYear: '2020',
+  endYear: '2023'
 };

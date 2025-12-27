@@ -59,7 +59,7 @@ export default function Footer() {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="block text-gray-300 hover:text-white transition-colors duration-200"
+                  className="block text-gray-300 hover:text-white transition-colors duration-200 py-2 text-base"
                 >
                   {link}
                 </button>
@@ -79,7 +79,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`p-2 rounded-lg bg-gray-800/50 hover:bg-gray-700/70 text-gray-300 hover:text-white transition-all duration-200 ${link.color}`}
+                  className={`min-w-[44px] min-h-[44px] rounded-lg bg-gray-800/50 hover:bg-gray-700/70 text-gray-300 hover:text-white transition-all duration-200 flex items-center justify-center ${link.color}`}
                   aria-label={link.name}
                 >
                   <link.icon className="h-5 w-5" />

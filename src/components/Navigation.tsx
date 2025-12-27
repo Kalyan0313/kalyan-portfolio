@@ -21,7 +21,7 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      
+
       // Update active section based on scroll position
       const sections = navItems.map(item => item.href.substring(1));
       const currentSection = sections.find(section => {
@@ -32,7 +32,7 @@ export default function Navigation() {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -55,11 +55,10 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'glass border-b border-border shadow-lg' 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+          ? 'glass border-b border-border shadow-lg'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -90,11 +89,10 @@ export default function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ y: -2 }}
-                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      isActive 
-                        ? 'text-primary bg-primary/10' 
+                    className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${isActive
+                        ? 'text-primary bg-primary/10'
                         : 'text-foreground hover:text-primary hover:bg-accent'
-                    }`}
+                      }`}
                   >
                     {item.name}
                     {isActive && (
@@ -119,7 +117,7 @@ export default function Navigation() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg text-foreground hover:text-primary hover:bg-accent transition-colors duration-200"
+                className="p-3 rounded-lg text-foreground hover:text-primary hover:bg-accent transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 aria-label="Toggle menu"
               >
                 <motion.div
@@ -155,11 +153,10 @@ export default function Navigation() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                     whileHover={{ x: 5 }}
-                    className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
-                      isActive 
-                        ? 'text-primary bg-primary/10' 
+                    className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${isActive
+                        ? 'text-primary bg-primary/10'
                         : 'text-foreground hover:text-primary hover:bg-accent'
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </motion.button>
